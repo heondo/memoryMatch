@@ -1,0 +1,428 @@
+#turn {
+  display: none;
+  position: absolute;
+  border-radius: 5%;
+  top: 45vh;
+  left: 50%;
+  color: white;
+  font-family: Lobster, cursive;
+  font-size: 1.5rem;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: 383838;
+  padding: 1rem;
+}
+
+.reset-button {
+  position: absolute;
+  top: -2rem;
+  border: 0.2em solid #EBEEF3;
+  color: #EBEEF3;
+  padding: 0.5em 1em;
+  line-height: .8em;
+  font-family: Cabin;
+}
+
+@media only screen and (orientation:portrait) and (min-width: 500px) {
+  #turn {display:block;}
+  .panel, .iconImages *, #header{ display:none; }
+}
+
+@media only screen and (orientation:landscape) and (max-height: 450px) {
+  #turn { display:block; }
+  .panel, .iconImages *, #header *{ display:none; }
+}
+
+
+body{
+  background-color: #383838;
+  position: relative;
+  margin-top: 0;
+}
+
+.iconImages {
+  left: 48%;
+  display: flex;
+  position: absolute;
+  justify-items: center;
+  flex-direction: column;
+  height: 100%;
+  top: 14%;
+  width: 4%;
+  position: fixed;
+}
+
+.iconImages > div {
+  height: 33%;
+  background-repeat: no-repeat;
+   background-size: contain;
+    position: relative;
+}
+
+.tvIcon {
+  background-image: url(../images/icons8-retro-tv-100.png);
+  top: 3.8%;
+}
+
+.movieIcon {
+  background-image: url(../images/movieiconb.png);
+  top: 2%;
+}
+
+.gameIcon {
+  background-image: url(../images/icons8-game-controller-100.png);
+  bottom: 2%;
+}
+
+#home {
+  position: relative;
+  margin-bottom: .5rem;
+}
+
+.gameTitle {
+  text-align: center;
+  font-family: Lobster, cursive;
+  color: #EBEEF3;
+  word-spacing: 8px;
+  position: relative;
+}
+
+.gameTitle > h1 {
+  margin-bottom: -.5rem;
+}
+
+#header {
+  width: 35%;
+  max-width: 355px;
+  right: 2.5%;
+  top: 1%;
+  position: absolute;
+  text-align: center;
+}
+
+#header > * {
+  margin-top: 10px;
+}
+
+#navigation {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type:none;
+  font-family: Cabin;
+  font-size: .8em;
+}
+
+#navigation li {
+  margin-right: .5rem;
+  cursor: pointer;
+}
+
+#navigation div:hover{
+  box-shadow: 0px 0px 25px #EBEEF3;
+}
+
+#navigation div {
+  border: 0.2em solid #EBEEF3;
+  color: #EBEEF3;
+  padding: 0.5em 1em;
+  line-height: .8em;
+}
+
+.panel {
+  margin-top: -200%;
+  min-width: 98%;
+  height: 93.5vh;
+  position: absolute;
+  -webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+  transition: all .8s ease-in-out;
+  left: .8%;
+  border-top-left-radius: 2%;
+  border-top-right-radius: 2%;
+  visibility: hidden;
+}
+
+.panel.currentlyShown {
+  left: 1%;
+  margin-top: 0px;
+  -webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+  transition: all .8s ease-in-out;
+  visibility: visible;
+}
+
+.content {
+  top: .4rem;
+  position: relative;
+  width: 97%;
+  height: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: .5%;
+  margin: auto;
+}
+
+.rotateXCard {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+#tvshows .card {
+  height: 28%;
+  width: 10.5%;
+  margin: 0 2.2rem 1rem;
+}
+
+#movies .card {
+  height: 28%;
+  width: 10.2%;
+  margin: 0 2.5rem 1rem;
+}
+
+#games .card {
+  height: 28%;
+  width: 10.8%;
+  margin: 0 2rem 1rem;
+}
+
+#tvshows .cardBack {
+  background-size: 40%;
+  background-color: black
+}
+
+#movies .cardBack {
+  background-size: 80%;
+  background-color: black;
+}
+
+#games .cardBack {
+   background-size: 125%;
+  background-color: black;
+}
+
+@media (max-width: 1050px) {
+  #tvshows .card {
+    height: 26%;
+    width: 12%;
+    margin: .4rem 1.2rem 1rem;
+  }
+
+  #movies .card {
+    height: 26%;
+    width: 11%;
+    margin: .4rem 1.4rem 1rem;
+  }
+
+  #games .card {
+    height: 24.5%;
+    width: 12%;
+    margin: .4rem 1.3rem 1rem;
+  }
+}
+
+@media (max-width: 600px){
+  #navigation {
+    font-size: .7em;
+}
+  .gameTitle {
+    font-size: .7rem;
+  }
+  .iconImages {
+    display: none;
+  }
+
+  #tvshows .card {
+    height: 15%;
+    width: 23%;
+    margin: 0 .3rem;
+  }
+
+  #movies .card {
+    height: 15%;
+    width: 22%;
+    margin: 0 .4rem;
+  }
+
+  #games .card {
+    height: 15.5%;
+    width: 24%;
+    margin: 0 .2rem;
+  }
+
+  h1 {
+    text-align: center;
+  }
+  #header {
+    position: relative;
+    margin: .3rem auto 0;
+  }
+  #navigation {
+    margin-bottom: 0;
+  }
+  #home {
+    margin-bottom: 0;
+  }
+  .card:hover {
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+  }
+
+  .reset-button {
+  position: absolute;
+  top: -5rem;
+  margin-left: .2rem;
+  font-size: .7em;
+  border: 0.2em solid #EBEEF3;
+  color: #EBEEF3;
+  padding: 0.2em .2em;
+  line-height: .8em;
+  font-family: Cabin;
+}
+
+}
+@media (max-width: 500px){
+  .reset-button {
+    top: -1.5rem;
+    margin-left: 2rem;
+    padding: 0.5em .5em;
+  }
+}
+
+
+#tvshows .card:not(.flipped):hover {
+  -webkit-box-shadow: 0 0 20px #990000;
+  box-shadow: 0 0 20px #990000;
+  overflow: hidden;
+}
+
+#games .card:not(.flipped):hover {
+  -webkit-box-shadow: 0 0 20px #0A3594;
+  box-shadow: 0 0 20px #0A3594;
+  overflow: hidden;
+}
+
+#movies .card:not(.flipped):hover {
+  -webkit-box-shadow: 0 0 20px gold;
+  box-shadow: 0 0 20px gold;
+  overflow: hidden;
+}
+
+.card:not(.flipped) {
+  cursor: pointer;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8%;
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+.card.flipped .cardFront {
+  z-index: 4;
+}
+
+.card.flipped .cardBack {
+  overflow: visible;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+   -webkit-transform-style: preserve-3d;
+  -webkit-transition: transform 0.8s;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cardFront {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  border-radius: 8%;
+}
+
+.cardBack {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 8%;
+  background-position: center;
+}
+
+
+
+.reset-button:hover{
+  box-shadow: 0px 0px 25px #EBEEF3;
+  cursor: pointer;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  font-family: Cabin;
+  left: 0;
+  top: 4rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal h3 {
+  margin: 0 auto .5rem;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding:1rem;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modal-text .nav-buttons {
+  color: black;
+}
+
+#modal-text #navigation div {
+  border: 0.2em solid black;
+}
+
+#modal-text #navigation {
+  padding-left: 0;
+}
