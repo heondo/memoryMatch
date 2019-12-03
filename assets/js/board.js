@@ -45,7 +45,6 @@ class GameBoard {
     for (var i of array) {
       doubled.push(i);
     }
-    return doubled;
     return this.randomizeArray(doubled);
   }
 
