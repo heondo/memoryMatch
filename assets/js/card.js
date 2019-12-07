@@ -93,7 +93,7 @@ class Card {
         }
         document.getElementById('modal-text').innerHTML = descriptionText;
         document.getElementById('modal-header').innerHTML = `My favorite ${boardLevelText}`;
-        document.getElementById('winModal').style.display = 'block';
+        document.getElementById('winModal').style.display = 'flex';
       }
       // if its 9, open a win modal
       return true;
